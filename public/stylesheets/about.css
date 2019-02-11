@@ -161,5 +161,6 @@ input[type=checkbox]:checked + label {
 }
 
 .linkPORT {
-    color: inherit; border-bottom: 1px solid #dadee5 ;
+    color: inherit !important; 
+    border-bottom: 1px solid #dadee5 ;
 }

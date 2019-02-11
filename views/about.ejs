@@ -46,10 +46,10 @@
 	<div class="nav">
 		<div class="nav__content">
 			<ul class="nav__list">
-				<li class="nav__list-item active-nav"><a href="/" class="hover-target">home</a></li>
-				<li class="nav__list-item"><a href="/portfolio" class="hover-target">portfolio</a></li>
-				<li class="nav__list-item"><a href="/about" class="hover-target">about</a></li>
-				<li class="nav__list-item"><a href="/contact" class="hover-target">contact</a></li>
+				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'home' ? 'active-nav' : '' %>"><a href="/" class="hover-target">home</a></li>
+				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'portfolio' ? 'active-nav' : '' %>"><a href="/portfolio" class="hover-target">portfolio</a></li>
+				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'about' ? 'active-nav' : '' %>"><a href="/about" class="hover-target">about</a></li>
+				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'contact' ? 'active-nav' : '' %>"><a href="/contact" class="hover-target">contact</a></li>
 			</ul>
 		</div>
 	</div>		
@@ -73,10 +73,10 @@
 		
 		<div class="containerSpec  container animated fadeInRight descAbout">
 			<p class="mt-3 text-center ">I am from Serbia, since i was a little kid i dreamt of becoming a web developer
-				and i decided to make that dream into reality
-				i am happy to improve other people bussines with  creativity and knowledge
-				i am perfecionist when we talk about making web sites you can count on that.
-				if you wanna see my other works <strong><a href="/portfolio" class="hvr-grow linkPORT">click here.</a></strong></p>
+                and i decided to make that dream into reality
+                i am happy to improve other people business with  creativity and knowledge
+                i am perfectionist when we talk about making web sites you can count on that.
+                if you wanna see my other works <strong><a href="/portfolio" class="hvr-grow linkPORT">click here.</a></strong></p>
 	</div>
 
         
