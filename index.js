@@ -1,21 +1,39 @@
 var express        = require("express"),
     app            = express(),
     bodyParser     = require("body-parser"),
-    nodemailer     = require('nodemailer')
-
-
+    nodemailer     = require('nodemailer'),
+    flash          = require("connect-flash"),
+    session        = require('express-session'),
+    cookieParser   = require('cookie-parser'),
+    dotenv         = require('dotenv').config()
+    
+    
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: 'veljko.cerovic7@gmail.com',
-        pass: 'doktorvecko1'
+        pass: process.env.GMAILPW
       }
     });
-    
 
+  
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
+app.use(cookieParser())
+app.use(flash());
+
+app.use(require("express-session")({
+  secret: "Cao kralju!",
+  resave: false,
+  saveUninitialized: false
+}));
+
+app.use(function(req, res, next){
+  res.locals.error       = req.flash("error");
+  res.locals.success     = req.flash("success");
+  next(); 
+});
 
 app.get("/", function(req, res){
     res.render("home",  {page: 'home'}); 
@@ -30,7 +48,7 @@ app.get("/", function(req, res){
  });
 
  app.get("/contact", function(req, res){
-    res.render("contact",  {page: 'contact'}); 
+    res.render("contact",  {page: 'contact', messages: req.flash('error')}); 
  });
  
  app.post("/contact", function(req, res){
@@ -43,25 +61,30 @@ app.get("/", function(req, res){
       from: email,
       to: 'veljko.cerovic7@gmail.com',
       subject: 'Message sent by: ' + name,
-      text: 'Phone Number: ' + phone + ' Message: ' + message
+      text: 'Email: '+ email + ' Phone Number: ' + phone + ' Message: ' + message
     };
    
     transporter.sendMail(mailOptions, function(error, info){
       if (error) {
         console.log(error);
+        req.flash("error", "We couldn't send your message please try again!")
+        res.redirect("/contact")
       } else {
         console.log('Email sent: ' + info.response);
-        alert("message was sent");
+        req.flash("success", "Message was successfully sent!")
+        res.redirect("/contact");
       }
     });
 
 
-   res.redirect("/contact");
+   
 });
 
 
+
+
  app.get("*", function(req, res){
-    res.send("Page dose not exist"); 
+    res.redirect("/");
  });
 
  app.listen(3000, 'localhost');

@@ -77,8 +77,18 @@
                             <a href="https://www.instagram.com/cera.web/"><h6 class="text-center h6 hvr-grow"><i class="fab fa-instagram p-2"></i> cera.web</h6></a>
                     </div>
                     <form action="/contact" method="POST">
-                    <div class="row input-container specCon animated zoomInUp">
-                        
+                    <div class="row input-container specCon animated zoomInUp justify-content-center">
+                            <% if(error && error.length > 0){ %>
+                                <div class="alert alert-light" role="alert">
+                                    <%= error %>
+                                </div>
+                            <% } %>
+                                <% if(success && success.length > 0){ %>
+                                     <div class="alert alert-light" role="alert">
+                                        <%= success %>
+                                    </div>
+                                <% } %>
+                    
                             <div class="col-md-12">
                                 <div class="styled-input wide">
                                     <input type="text"  name="name" required />

@@ -10,8 +10,12 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "nodemailer": "^5.1.1",
     "react": "^16.8.1"
   }
