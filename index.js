@@ -7,7 +7,6 @@ var express        = require("express"),
     cookieParser   = require('cookie-parser'),
     dotenv         = require('dotenv').config()
     
-    
     var transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -24,7 +23,7 @@ app.use(cookieParser())
 app.use(flash());
 
 app.use(require("express-session")({
-  secret: "Cao kralju!",
+  secret: process.env.SECRETCODE,
   resave: false,
   saveUninitialized: false
 }));
@@ -35,23 +34,36 @@ app.use(function(req, res, next){
   next(); 
 });
 
-app.get("/", function(req, res){
+app.get("/en", function(req, res){
     res.render("home",  {page: 'home'}); 
  });
 
- app.get("/portfolio", function(req, res){
+ app.get("/", function(req, res){
+  res.render("pocetna",  {page: 'home'}); 
+});
+
+ app.get("/en/portfolio", function(req, res){
     res.render("portfolio",  {page: 'portfolio'}); 
  });
 
- app.get("/about", function(req, res){
+ app.get("/radovi", function(req, res){
+  res.render("radovi",  {page: 'portfolio'}); 
+});
+
+ app.get("/en/about", function(req, res){
     res.render("about",  {page: 'about'}); 
  });
+ 
+ app.get("/o-meni", function(req, res){
+  res.render("omeni",  {page: 'about'}); 
+});
 
- app.get("/contact", function(req, res){
+
+ app.get("/en/contact", function(req, res){
     res.render("contact",  {page: 'contact', messages: req.flash('error')}); 
  });
  
- app.post("/contact", function(req, res){
+ app.post("/en/contact", function(req, res){
    var name = req.body.name;
    var email = req.body.email;
    var phone = req.body.phone;
@@ -68,16 +80,50 @@ app.get("/", function(req, res){
       if (error) {
         console.log(error);
         req.flash("error", "We couldn't send your message please try again!")
-        res.redirect("/contact")
+        res.redirect("/en/contact")
       } else {
         console.log('Email sent: ' + info.response);
         req.flash("success", "Message was successfully sent!")
-        res.redirect("/contact");
+        res.redirect("/en/contact");
       }
     });
 
 
    
+});
+
+
+app.get("/kontakt", function(req, res){
+  res.render("kontakt",  {page: 'contact', messages: req.flash('error')}); 
+});
+
+app.post("/kontakt", function(req, res){
+ var name = req.body.name;
+ var email = req.body.email;
+ var phone = req.body.phone;
+ var message = req.body.message;
+
+ var mailOptions = {
+    from: email,
+    to: 'veljko.cerovic7@gmail.com',
+    subject: 'Message sent by: ' + name,
+    text: 'Email: '+ email + ' Phone Number: ' + phone + ' Message: ' + message
+  };
+ 
+  transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+      console.log(error);
+      req.flash("error", "Nismo mogli da posaljemo vasu poruku, pokusajte ponovo!")
+      res.redirect("/kontakt")
+    } else {
+      console.log('Email sent: ' + info.response);
+      req.flash("success", "Poruka je uspesno poslata!")
+      res.redirect("/kontakt");
+    }
+  });
+
+
+ 
 });
 
 

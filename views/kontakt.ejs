@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="icon" href="/img/logo.png">
-    <title>Veljko Cerovic Web Designer and Developer</title>
+    <title>Veljko Cerovic Web Dizajner i Programer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Veljko Cerovic" />
-	<meta name="description" content="Freelance Web Designer and Developer from Serbia. Very experienced in designing and developing web sites. " />
-	<meta name="keywords"  content="Veljko Cerovic, Web Designer and Web Developer, web designer,web developer, web development, i need a website" />
+	<meta name="description" content="Freelance Web Dizajner i Programer.Veoma iskusan u dizajniranju i razvoju veb stranica. " />
+	<meta name="keywords"  content="Veljko Cerovic, Web Dizajner i Programer, web dizajn, web programiranje, treba mi websajt, izrada web sajtova" />
 	<meta name="Resource-type" content="Document" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
@@ -34,7 +34,7 @@
     <header class="cd-header">
 		<div class="header-wrapper">
 			<div class="logo-wrap  animated bounceInLeft">
-				<a href="/en" class="hover-target hvr-buzz-out"><span></span>cera</a>
+				<a href="/" class="hover-target hvr-buzz-out"><span></span>cera</a>
 			</div>
 			<div class="nav-but-wrap">
 				<div class="menu-icon hover-target">
@@ -49,10 +49,10 @@
 	<div class="nav">
 		<div class="nav__content">
 			<ul class="nav__list">
-                <li class="nav__list-item <%= typeof page !== 'undefined' && page === 'home' ? 'active-nav' : '' %>"><a href="/en" class="hover-target">home</a></li>
-				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'portfolio' ? 'active-nav' : '' %>"><a href="/en/portfolio" class="hover-target">portfolio</a></li>
-				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'about' ? 'active-nav' : '' %>"><a href="/en/about" class="hover-target">about</a></li>
-				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'contact' ? 'active-nav' : '' %>"><a href="/en/contact" class="hover-target">contact</a></li>
+                <li class="nav__list-item <%= typeof page !== 'undefined' && page === 'home' ? 'active-nav' : '' %>"><a href="/" class="hover-target">pocenta</a></li>
+				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'portfolio' ? 'active-nav' : '' %>"><a href="/radovi" class="hover-target">radovi</a></li>
+				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'about' ? 'active-nav' : '' %>"><a href="/o-meni" class="hover-target">o meni</a></li>
+				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'contact' ? 'active-nav' : '' %>"><a href="/kontakt" class="hover-target">kontakt</a></li>
 			</ul>
 		</div>
 	</div>		
@@ -69,7 +69,7 @@
     <div class="container specCon">
                     <div class="row d-flex justify-content-center animated zoomInDown ">
 
-                            <h1 id="conh1" class="mt-5">Contact Me</h1>
+                            <h1 id="conh1" class="mt-5">Kontakt</h1>
                       <div class="w-100"></div>
                 
                             <h6 class="text-center h6"><i class="far fa-envelope p-2"></i> veljko.cerovic7@gmail.com</h6>
@@ -78,7 +78,7 @@
                             <div class="w-100"></div>
                             <a href="https://www.instagram.com/cera.web/"><h6 class="text-center h6 hvr-grow"><i class="fab fa-instagram p-2"></i> cera.web</h6></a>
                     </div>
-                    <form action="/en/contact" method="POST">
+                    <form action="/kontakt" method="POST">
                     <div class="row input-container specCon animated zoomInUp justify-content-center">
                             <% if(error && error.length > 0){ %>
                                 <div class="alert alert-light" role="alert">
@@ -94,7 +94,7 @@
                             <div class="col-md-12">
                                 <div class="styled-input wide">
                                     <input type="text"  name="name" required />
-                                    <label>Name</label> 
+                                    <label>Ime</label> 
                                 </div>
                             </div>
                             <div class="col-md-6 col-sm-12">
@@ -106,17 +106,17 @@
                             <div class="col-md-6 col-sm-12">
                                 <div class="styled-input" style="float:right;">
                                     <input type="text" name="phone" required />
-                                    <label>Phone Number</label> 
+                                    <label>Broj Telefona</label> 
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="styled-input wide">
                                     <textarea name="message" required></textarea>
-                                    <label>Message</label>
+                                    <label>Poruka</label>
                                 </div>
                             </div>
                             <div class="col-md-12">
-                                <button type="submit" class="btn-lrg submit-btn hvr-pulse-grow">Send Message</button>
+                                <button type="submit" class="btn-lrg submit-btn hvr-pulse-grow">Posalji Poruku</button>
                             </div>
                     
                     </div>
