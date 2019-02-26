@@ -8,7 +8,7 @@
   },
   "author": "Cera",
   "license": "ISC",
-  "hompage": "https://drcerovic.github.io/veljkocerovic",
+  "homepage": "https://drcerovic.github.io/veljkocerovic",
   "dependencies": {
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
