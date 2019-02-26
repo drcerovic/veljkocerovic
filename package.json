@@ -4,10 +4,11 @@
   "description": "my website",
   "main": "index.js",
   "scripts": {
-    "deploy":"gh-pages -d dist"
+    "deploy": "gh-pages -d Cera"
   },
   "author": "Cera",
   "license": "ISC",
+  "hompage": "https://drcerovic.github.io/veljkocerovic",
   "dependencies": {
     "body-parser": "^1.18.3",
     "connect-flash": "^0.1.1",
@@ -16,6 +17,7 @@
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
+    "gh-pages": "^2.0.1",
     "nodemailer": "^5.1.1",
     "react": "^16.8.1"
   }
