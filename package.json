@@ -4,7 +4,7 @@
   "description": "my website",
   "main": "index.js",
   "scripts": {
-    "deploy": "gh-pages -d Cera"
+    "deploy": "gh-pages -d cerovic"
   },
   "author": "Cera",
   "license": "ISC",
