@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="icon" href="/img/logo3.jpg">
+    <title>Cerovic Web Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Veljko Cerovic" />
+	<meta name="description" content="Freelance Web Dizajner i Programer.Veoma iskusan u dizajniranju i razvoju veb stranica. " />
+	<meta name="keywords"  content="Cerovic Web Studio,Veljko Cerovic, Web Dizajner i Programer, web dizajn, web programiranje, treba mi websajt, izrada web sajtova" />
+	<meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/contact.css" />
+	<link href="https://fonts.googleapis.com/css?family=Paytone+One|Saira:200,300,400,500,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="/stylesheets/hover.css" rel="stylesheet" media="all">
+    <script>document.documentElement.className="js";var supportsCssVars=function(){var e,t=document.createElement("style");return t.innerHTML="root: { --tmp-var: bold; }",document.head.appendChild(t),e=!!(window.CSS&&window.CSS.supports&&window.CSS.supports("font-weight","var(--tmp-var)")),t.parentNode.removeChild(t),e};supportsCssVars()||alert("Please view this demo in a modern browser that supports CSS Variables.");</script>
+</head>
+<body>
+   
+		<main>	
+				<div class="content content--canvas">
+					
+				</div>
+            </main>
+            
+                
+        
+            
+    <header class="cd-header">
+		<div class="header-wrapper">
+			<div class="logo-wrap  animated bounceInLeft">
+				<a href="/" class="hover-target hvr-buzz-out"><span></span>cera</a>
+			</div>
+			<div class="nav-but-wrap">
+				<div class="menu-icon hover-target">
+					<span class="menu-icon__line menu-icon__line-left"></span>
+					<span class="menu-icon__line"></span>
+					<span class="menu-icon__line menu-icon__line-right"></span>
+				</div>					
+			</div>					
+		</div>				
+	</header>
+
+	<div class="nav">
+		<div class="nav__content">
+			<ul class="nav__list">
+                <li class="nav__list-item <%= typeof page !== 'undefined' && page === 'home' ? 'active-nav' : '' %>"><a href="/" class="hover-target">pocenta</a></li>
+				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'portfolio' ? 'active-nav' : '' %>"><a href="/radovi" class="hover-target">radovi</a></li>
+				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'about' ? 'active-nav' : '' %>"><a href="/o-meni" class="hover-target">o meni</a></li>
+				<li class="nav__list-item <%= typeof page !== 'undefined' && page === 'contact' ? 'active-nav' : '' %>"><a href="/kontakt" class="hover-target">kontakt</a></li>
+			</ul>
+		</div>
+	</div>		
+
+	<!-- <div class="section full-height over-hide">	
+
+    </div>	 -->
+
+    
+	<div class='cursor' id="cursor"></div>
+	<div class='cursor2' id="cursor2"></div>
+	<div class='cursor3' id="cursor3"></div>
+
+    <div class="container specCon">
+                    <div class="row d-flex justify-content-center animated zoomInDown ">
+
+                            <h1 id="conh1" class="mt-5">Kontakt</h1>
+                      <div class="w-100"></div>
+                
+                            <h6 class="text-center h6"><i class="far fa-envelope p-2"></i> veljko.cerovic7@gmail.com</h6>
+                            <div class="w-100"></div>
+                            <h6 class="text-center h6 "><i class="fas fa-phone "></i> +381 65 2070714</h6></a>
+                            <div class="w-100"></div>
+                            <a href="https://www.facebook.com/cerovic.web/"><h6 class="text-center h6 hvr-grow"><i class="fab fa-facebook p-2"></i> Cerovic Web Studio</h6></a>
+                            <div class="w-100"></div>
+                            <a href="https://www.instagram.com/cerovic.web/"><h6 class="text-center h6 hvr-grow"><i class="fab fa-instagram p-2 "></i> cerovic.web</h6></a>
+                      
+                    </div>
+                    <form action="/kontakt" method="POST">
+                    <div class="row input-container specCon animated zoomInUp justify-content-center">
+                            <% if(error && error.length > 0){ %>
+                                <div class="alert alert-light" role="alert">
+                                    <%= error %>
+                                </div>
+                            <% } %>
+                                <% if(success && success.length > 0){ %>
+                                     <div class="alert alert-light" role="alert">
+                                        <%= success %>
+                                    </div>
+                                <% } %>
+                    
+                            <div class="col-md-12">
+                                <div class="styled-input wide">
+                                    <input type="text"  name="name" required />
+                                    <label>Ime</label> 
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="styled-input">
+                                    <input type="email" name="email" aria-describedby="emailHelp"  required />
+                                    <label>Email</label> 
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12">
+                                <div class="styled-input" style="float:right;">
+                                    <input type="text" name="phone" required />
+                                    <label>Broj Telefona</label> 
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="styled-input wide">
+                                    <textarea name="message" required></textarea>
+                                    <label>Poruka</label>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button type="submit" class="btn-lrg submit-btn hvr-pulse-grow">Posalji Poruku</button>
+                            </div>
+                    
+                    </div>
+                </form>
+                </div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/noise.min.js"></script>
+<script src="/js/util.js"></script>
+<script src="/js/swirl.js"></script>
+<script src="/js/demo.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
